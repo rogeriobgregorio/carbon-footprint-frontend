@@ -1,0 +1,13 @@
+<div>
+  <input [(ngModel)]="userId" placeholder="User ID" />
+  <button (click)="loadHistory()">Carregar Histórico</button>
+
+  <h3 *ngIf="offsetCost !== null">Custo para compensar: {{ offsetCost | currency:'USD' }}</h3>
+
+  <ul>
+    <li *ngFor="let item of history">
+      Emissão: {{ item.calculatedEmission }} kg CO₂ em {{ item.date }}
+    </li>
+  </ul>
+</div>
+
